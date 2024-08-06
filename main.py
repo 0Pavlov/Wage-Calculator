@@ -59,7 +59,7 @@ class WageCalculatorApp(App):
     def build(self):
         root = WageCalculatorLayout()
         # Schedule the initial calculation for the next frame
-        Clock.schedule_once(lambda dt: self.calculate(), 0)
+        Clock.schedule_once(lambda dt: self.calculate(), 2)
         return root
 
 
