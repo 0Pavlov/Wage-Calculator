@@ -36,39 +36,15 @@
                 # sizing
                 color: root.text_color
                 valign: 'middle'
-                # background color
-                canvas.before:
-                    Color:
-                        rgba: 1, 0, 0, .3
-                    Rectangle:
-                        size: self.size
-                        pos: self.pos
-                # background color
 
             # (slider+label) layout
             BoxLayout:
                 orientation: 'horizontal'
-                # background color
-                canvas.before:
-                    Color:
-                        rgba: 1, 0, 0, .3
-                    Rectangle:
-                        size: self.size
-                        pos: self.pos
-                # background color
 
                 # slider
                 Slider:
                     id: day_hour_slider
                     size: self.size
-                    # background color
-                    canvas.before:
-                        Color:
-                            rgba: 1, 0, 0, .3
-                        Rectangle:
-                            size: self.size
-                            pos: self.pos
-                    # background color
                     min: 250
                     max: 350
                     step: 5
@@ -398,11 +374,3 @@
         valign: 'middle'
         shorten: True
         # sizing
-        # background color
-        canvas.before:
-            Color:
-                rgba: 1, 0, 0, .3
-            Rectangle:
-                size: self.size
-                pos: self.pos
-        # background color
