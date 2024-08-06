@@ -7,6 +7,8 @@ I work at a company where earnings calculations can be complex. Even a simple ch
 
 [![Static Badge](https://img.shields.io/badge/DOWNLOAD-APK%20v0.1.1-white?style=for-the-badge&logo=android&logoColor=white&logoSize=auto&labelColor=black&link=**https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.1/WCalc-v0.1.1.apk**)](https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.1/WCalc-v0.1.1.apk)
 
+[читать на русском](https://github.com/0Pavlov/Wage-Calculator/blob/master/README.ru.md)
+
 </div> 
 
 ## Features:
