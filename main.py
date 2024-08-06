@@ -3,7 +3,7 @@ from kivy.clock import Clock
 from kivy.lang import Builder
 from kivy.properties import ListProperty
 from kivy.uix.boxlayout import BoxLayout
-from function import calculate
+from wage_calculator.functions import calculate
 
 Builder.load_file('ui.kv')
 

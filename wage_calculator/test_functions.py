@@ -1,4 +1,4 @@
-from function import calculate
+from functions import calculate
 
 
 def test_day_shifts():
