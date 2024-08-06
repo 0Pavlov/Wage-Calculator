@@ -1,9 +1,3 @@
-def main():
-    amount = str(calculate(night_shifts=20, bonus_speed=True))
-    message = f"You've earned {amount} for 20 night shifts worked."
-    print(message)
-
-
 def calculate(night_shifts: int = 0,
               day_shifts: int = 0,
               day_hour: int = 275,
@@ -63,7 +57,3 @@ def calculate(night_shifts: int = 0,
     # Total earned
     total_earned = total_day_hours_cost + total_night_hours_cost + bonus
     return total_earned
-
-
-if __name__ == "__main__":
-    main()
