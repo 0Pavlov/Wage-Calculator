@@ -5,7 +5,7 @@
 ***This is a simple Wage Calculator made using the Kivy framework, allowing you to keep track of your earnings.***
 I work at a company where earnings calculations can be complex. Even a simple change in hours worked may require a tedious, though not necessarily difficult, calculation process. To address this problem and make life easier, I decided to create this software.
 
-[![Static Badge](https://img.shields.io/badge/DOWNLOAD-APK%20v0.1.1-white?style=for-the-badge&logo=android&logoColor=white&logoSize=auto&labelColor=black&link=**https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.1/WCalc-v0.1.1.apk**)](https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.1/WCalc-v0.1.1.apk)
+[![Static Badge](https://img.shields.io/badge/DOWNLOAD-APK%20v0.1.2-white?style=for-the-badge&logo=android&logoColor=white&logoSize=auto&labelColor=black&link=**https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.2/WCalc-v0.1.2.apk**)](https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.2/WCalc-v0.1.2.apk)
 
 [читать на русском](https://github.com/0Pavlov/Wage-Calculator/blob/master/README.ru.md)
 
