@@ -20,12 +20,12 @@ class ThemeManager:
             'slider_track_color': [0, 0, 0, 0]
         },
         'test': {
-            "background_color": [.9, .9, .9, 1],
-            "button_color": [.7, .7, .7, 1],
-            "button_color_dark": [.6, .6, .6, 1],
-            "button_active_color": [.2, .6, .9, 1],
-            "text_color": [.1, .1, .1, 1],
-            "slider_cursor_color": [.2, .6, .9, 1],
+            "background_color": [41/255, 39/255, 60/255, 1],
+            "button_color": [125/255, 119/255, 187/255, 1],
+            "button_color_dark": [86/255, 85/255, 102/255, 1],
+            "button_active_color": [120/255, 109/255, 230/255, 1],
+            "text_color": [244/255, 244/255, 244/255, 1],
+            "slider_cursor_color": [120/255, 109/255, 230/255, 1],
             "slider_track_color": [0, 0, 0, 0],
         },
     }
