@@ -8,14 +8,44 @@ from wage_calculator.functions import calculate
 Builder.load_file('ui.kv')
 
 
+class ThemeManager:
+    themes = {
+        'default': {
+            'background_color': [44/255, 44/255, 44/255, 1],
+            'button_color': [85/255, 85/255, 85/255, 1],
+            'button_color_dark': [64/255, 64/255, 64/255, 1],
+            'button_active_color': [236/255, 101/255, 54/255, 1],
+            'text_color': [244/255, 244/255, 244/255, 1],
+            'slider_cursor_color': [236/255, 101/255, 54/255, 1],
+            'slider_track_color': [0, 0, 0, 0]
+        },
+        'test': {
+            "background_color": [.9, .9, .9, 1],
+            "button_color": [.7, .7, .7, 1],
+            "button_color_dark": [.6, .6, .6, 1],
+            "button_active_color": [.2, .6, .9, 1],
+            "text_color": [.1, .1, .1, 1],
+            "slider_cursor_color": [.2, .6, .9, 1],
+            "slider_track_color": [0, 0, 0, 0],
+        },
+    }
+
+    @staticmethod
+    def get_theme(theme_name):
+        return ThemeManager.themes.get(theme_name)
+
+
 class WageCalculatorLayout(BoxLayout):
-    background_color = ListProperty([.17254902, .17254902, .17254902, 1])
-    button_color = ListProperty([.333333333, .333333333, .333333333, 1])
-    button_color_dark = ListProperty([.250980392, .250980392, .250980392, 1])
-    button_active_color = ListProperty([.925490196, .396078431, .211764706, 1])
-    text_color = ListProperty([.956862745, .956862745, .956862745, 1])
-    slider_cursor_color = ListProperty([.925490196, .396078431, .211764706, 1])
-    slider_track_color = ListProperty([0, 0, 0, 0])  # Does nothing. Brakes on delete.
+    theme = ThemeManager.get_theme('default')
+    background_color = ListProperty(theme['background_color'])
+    button_color = ListProperty(theme['button_color'])
+    button_color_dark = ListProperty(theme['button_color_dark'])
+    button_active_color = ListProperty(theme['button_active_color'])
+    text_color = ListProperty(theme['text_color'])
+    slider_cursor_color = ListProperty(theme['slider_cursor_color'])
+
+    # Does nothing. Brakes on delete.
+    slider_track_color = ListProperty(theme['slider_track_color'])
 
 
 class WageCalculatorApp(App):
