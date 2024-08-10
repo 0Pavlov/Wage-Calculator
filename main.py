@@ -4,35 +4,9 @@ from kivy.lang import Builder
 from kivy.properties import ListProperty
 from kivy.uix.boxlayout import BoxLayout
 from wage_calculator.functions import calculate
+from wage_calculator.theme_manager import ThemeManager
 
 Builder.load_file('ui.kv')
-
-
-class ThemeManager:
-    themes = {
-        'default': {
-            'background_color': [44/255, 44/255, 44/255, 1],
-            'button_color': [85/255, 85/255, 85/255, 1],
-            'button_color_dark': [64/255, 64/255, 64/255, 1],
-            'button_active_color': [236/255, 101/255, 54/255, 1],
-            'text_color': [244/255, 244/255, 244/255, 1],
-            'slider_cursor_color': [236/255, 101/255, 54/255, 1],
-            'slider_track_color': [0, 0, 0, 0]
-        },
-        'test': {
-            "background_color": [41/255, 39/255, 60/255, 1],
-            "button_color": [125/255, 119/255, 187/255, 1],
-            "button_color_dark": [86/255, 85/255, 102/255, 1],
-            "button_active_color": [120/255, 109/255, 230/255, 1],
-            "text_color": [244/255, 244/255, 244/255, 1],
-            "slider_cursor_color": [120/255, 109/255, 230/255, 1],
-            "slider_track_color": [0, 0, 0, 0],
-        },
-    }
-
-    @staticmethod
-    def get_theme(theme_name):
-        return ThemeManager.themes.get(theme_name)
 
 
 class WageCalculatorLayout(BoxLayout):
@@ -47,6 +21,15 @@ class WageCalculatorLayout(BoxLayout):
     # Does nothing. Brakes on delete.
     slider_track_color = ListProperty(theme['slider_track_color'])
 
+    def update_theme(self, theme_name):
+        self.theme = ThemeManager.get_theme(theme_name)
+        self.background_color = self.theme['background_color']
+        self.button_color = self.theme['button_color']
+        self.button_color_dark = self.theme['button_color_dark']
+        self.button_active_color = self.theme['button_active_color']
+        self.text_color = self.theme['text_color']
+        self.slider_cursor_color = self.theme['slider_cursor_color']
+
 
 class WageCalculatorApp(App):
     def __init__(self, **kwargs):
@@ -58,6 +41,14 @@ class WageCalculatorApp(App):
         self.bonus_performance = False
         self.day_hours = 0
         self.night_hours = 0
+
+    def set_theme(self):
+        current_theme_name = list(ThemeManager.themes.keys())[
+            list(ThemeManager.themes.values()).index(self.root.theme)]
+        themes = ThemeManager.get_themes_names()
+        next_theme_index = (themes.index(current_theme_name) + 1) % len(themes)
+        next_theme = themes[next_theme_index]
+        self.root.update_theme(next_theme)
 
     def calculate(self):
         total_earned = calculate(
