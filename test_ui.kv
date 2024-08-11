@@ -1,0 +1,399 @@
+# main layout that divides the screen vertically
+# between tweak part and the output part
+<WageCalculatorLayout>:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 5
+    # Background color of the main layout
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    # tweak part
+    GridLayout:
+        cols: 1
+        spacing: 20
+        padding: 10
+        canvas.before:
+            Color:
+                rgba: 0, 0, 0, .1
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius: [10]
+
+        # Row 1 start
+        # label and (slider+label) layout
+
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 5
+            padding: 20
+            canvas.before:
+                Color:
+                    rgba: root.button_color
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [20]
+
+            # label
+            Label:
+                text: "Ставка (день):"
+                # sizing
+                font_size: (self.width + self.height) / 15
+                text_size: self.size
+                halign: 'center'
+                valign: 'middle'
+                shorten: True
+                # sizing
+                color: root.text_color
+                valign: 'middle'
+                size_hint_x: 2/10
+
+            # slider
+            Slider:
+                id: day_hour_slider
+                size: self.size
+                min: 250
+                max: 350
+                step: 5
+                value: 275
+                on_value: app.update_day_hour(self.value)
+                # Slider color properties
+                value_track: root.slider_track_color
+                value_track_width: '5dp'
+                #cursor_image: ''  # Remove default cursor
+                cursor_size: '20dp', '20dp'
+                canvas.after:
+                    Color:
+                        rgba: root.slider_cursor_color
+                    Ellipse:
+                        pos: (self.value_pos[0] - self.cursor_size[0] / 2, self.center_y - self.cursor_size[1] / 2)
+                        size: self.cursor_size
+                size_hint_x: 6/10
+
+            #label
+            Label:
+                id: day_hour_label
+                text: str(int(day_hour_slider.value))
+                # sizing
+                font_size: (self.width + self.height) / 10
+                text_size: self.size
+                halign: 'center'
+                valign: 'middle'
+                shorten: True
+                # sizing
+                color: root.text_color
+                valign: 'middle'
+                size_hint_x: 1/10
+        # Row 1 end
+
+        # Row 2 start
+        # (label) and ((button+label+button)layout) layout
+
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 5
+
+            # label
+            Label:
+                text: 'Смены (ночь):'
+                # sizing
+                font_size: (self.width + self.height) / 20
+                text_size: self.size
+                halign: 'center'
+                valign: 'middle'
+                shorten: True
+                # sizing
+                color: root.text_color
+
+            # (button+label+button) layout
+            BoxLayout:
+                id: night_shifts_layout
+                orientation: 'horizontal'
+                Button:
+                    background_color: root.button_color if self.state == 'normal' else root.button_active_color
+                    background_normal: ""
+                    background_down: ""
+                    text: "-"
+                    # sizing
+                    font_size: (self.width + self.height) / 10
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'middle'
+                    # sizing
+                    color: root.text_color
+                    on_press: app.update_value('night_shifts', -1)
+                Label:
+                    id: night_shifts_label
+                    text: "0"
+                    # sizing
+                    font_size: (self.width + self.height) / 10
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'middle'
+                    shorten: True
+                    # sizing
+                    color: root.text_color
+                Button:
+                    background_color: root.button_color if self.state == 'normal' else root.button_active_color
+                    background_normal: ""
+                    background_down: ""
+                    text: "+"
+                    # sizing
+                    font_size: (self.width + self.height) / 10
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'middle'
+                    # sizing
+                    color: root.text_color
+                    on_press: app.update_value('night_shifts', 1)
+        # Row 2 end
+
+        # Row 3 start
+        # (label) and ((button+label+button)layout) layout
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 5
+
+            # label
+            Label:
+                text: 'Смены (день):'
+                # sizing
+                font_size: (self.width + self.height) / 20
+                text_size: self.size
+                halign: 'center'
+                valign: 'middle'
+                shorten: True
+                # sizing
+                color: root.text_color
+
+            # (button+label+button) layout
+            BoxLayout:
+                id: day_shifts_layout
+                orientation: 'horizontal'
+                Button:
+                    background_color: root.button_color if self.state == 'normal' else root.button_active_color
+                    background_normal: ""
+                    background_down: ""
+                    text: "-"
+                    # sizing
+                    font_size: (self.width + self.height) / 10
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'middle'
+                    # sizing
+                    color: root.text_color
+                    on_press: app.update_value('day_shifts', -1)
+                Label:
+                    id: day_shifts_label
+                    text: "0"
+                    # sizing
+                    font_size: (self.width + self.height) / 10
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'middle'
+                    shorten: True
+                    # sizing
+                    color: root.text_color
+                Button:
+                    background_color: root.button_color if self.state == 'normal' else root.button_active_color
+                    background_normal: ""
+                    background_down: ""
+                    text: "+"
+                    # sizing
+                    font_size: (self.width + self.height) / 10
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'middle'
+                    # sizing
+                    color: root.text_color
+                    on_press: app.update_value('day_shifts', 1)
+        # Row 3 end
+
+        # Row 4 start
+        # (label) and ((button+label+button)layout) layout
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 5
+
+            # label
+            Label:
+                text: "Часы отдельно (день):"
+                # sizing
+                font_size: (self.width + self.height) / 20
+                text_size: self.size
+                halign: 'center'
+                valign: 'middle'
+                shorten: True
+                # sizing
+                color: root.text_color
+
+            # (button+label+button) layout
+            BoxLayout:
+                id: day_hours_layout
+                orientation: 'horizontal'
+                Button:
+                    background_color: root.button_color if self.state == 'normal' else root.button_active_color
+                    background_normal: ""
+                    background_down: ""
+                    text: "-"
+                    # sizing
+                    font_size: (self.width + self.height) / 10
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'middle'
+                    # sizing
+                    color: root.text_color
+                    on_press: app.update_value('day_hours', -1)
+                Label:
+                    id: day_hours_label
+                    text: "0"
+                    # sizing
+                    font_size: (self.width + self.height) / 10
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'middle'
+                    shorten: True
+                    # sizing
+                    color: root.text_color
+                Button:
+                    background_color: root.button_color if self.state == 'normal' else root.button_active_color
+                    background_normal: ""
+                    background_down: ""
+                    text: "+"
+                    # sizing
+                    font_size: (self.width + self.height) / 10
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'middle'
+                    # sizing
+                    color: root.text_color
+                    on_press: app.update_value('day_hours', 1)
+        # Row 4 end
+
+        # Row 5 start
+        # (label) and ((button+label+button)layout) layout
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 5
+
+            # label
+            Label:
+                text: "Часы отдельно (ночь):"
+                # sizing
+                font_size: (self.width + self.height) / 20
+                text_size: self.size
+                halign: 'center'
+                valign: 'middle'
+                shorten: True
+                # sizing
+                color: root.text_color
+
+            # (button+label+button) layout
+            BoxLayout:
+                id: night_hours_layout
+                orientation: 'horizontal'
+                Button:
+                    background_color: root.button_color if self.state == 'normal' else root.button_active_color
+                    background_normal: ""
+                    background_down: ""
+                    text: "-"
+                    # sizing
+                    font_size: (self.width + self.height) / 10
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'middle'
+                    # sizing
+                    color: root.text_color
+                    on_press: app.update_value('night_hours', -1)
+                Label:
+                    id: night_hours_label
+                    text: "0"
+                    # sizing
+                    font_size: (self.width + self.height) / 10
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'middle'
+                    shorten: True
+                    # sizing
+                    color: root.text_color
+                Button:
+                    background_color: root.button_color if self.state == 'normal' else root.button_active_color
+                    background_normal: ""
+                    background_down: ""
+                    text: "+"
+                    # sizing
+                    font_size: (self.width + self.height) / 10
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'middle'
+                    # sizing
+                    color: root.text_color
+                    on_press: app.update_value('night_hours', 1)
+        # Row 5 end
+
+        # Row 6 start
+        # button + button layout
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 5
+            ToggleButton:
+                id: bonus_speed_checkbox
+                background_color: root.button_color_dark if self.state == 'normal' else root.button_active_color
+                background_normal: ""
+                background_down: ""
+                text: "Премия (скорость)"
+                # sizing
+                font_size: (self.width + self.height) / 20
+                text_size: self.size
+                halign: 'center'
+                valign: 'middle'
+                shorten: True
+                # sizing
+                color: root.text_color
+                state: 'down'
+                on_state: app.toggle_checkbox('bonus_speed', self.state)
+            ToggleButton:
+                id: bonus_performance_checkbox
+                background_color: root.button_color_dark if self.state == 'normal' else root.button_active_color
+                background_normal: ""
+                background_down: ""
+                text: "Премия (ПКС)"
+                # sizing
+                font_size: (self.width + self.height) / 20
+                text_size: self.size
+                halign: 'center'
+                valign: 'middle'
+                shorten: True
+                # sizing
+                color: root.text_color
+                on_state: app.toggle_checkbox('bonus_performance', self.state)
+
+    # output part
+    Button:
+        id: result_label
+        text: 'Зарплата: 0.00'
+        color: root.text_color
+        background_color: 0, 0, 0, 0 # Transparent
+        on_press: app.set_theme()
+        # sizing
+        # make label took bottom third of the screen
+        size_hint_y: 1/3
+        font_size: (self.width + self.height) / 20
+        text_size: self.size
+        halign: 'center'
+        valign: 'middle'
+        shorten: True
+        # sizing
+        canvas.before:
+            Color:
+                rgba: 0, 0, 0, .2
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [20]
