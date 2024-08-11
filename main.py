@@ -6,7 +6,7 @@ from kivy.uix.boxlayout import BoxLayout
 from wage_calculator.functions import calculate
 from wage_calculator.theme_manager import ThemeManager
 
-Builder.load_file('ui.kv')
+Builder.load_file('test_ui.kv')
 
 
 class WageCalculatorLayout(BoxLayout):
