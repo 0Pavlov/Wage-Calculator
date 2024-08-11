@@ -5,7 +5,7 @@
 ***Это простой калькулятор заработной платы, созданный с использованием фреймворка Kivy, который позволяет вам отслеживать свои доходы.***
 Я работаю в компании, где расчет заработной платы может быть сложным. Даже простое изменение количества отработанных часов может потребовать утомительного, хотя и не обязательно сложного, процесса расчета. Чтобы решить эту проблему и упростить жизнь, я решил создать это приложение.
 
-[![Static Badge](https://img.shields.io/badge/DOWNLOAD-APK%20v0.1.2-white?style=for-the-badge&logo=android&logoColor=white&logoSize=auto&labelColor=black&link=**https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.2/WCalc-v0.1.2.apk**)](https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.2/WCalc-v0.1.2.apk)
+[![Static Badge](https://img.shields.io/badge/DOWNLOAD-APK%20v0.1.3-white?style=for-the-badge&logo=android&logoColor=white&logoSize=auto&labelColor=black&link=**https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.3/WCalc-v0.1.3.apk**)](https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.3/WCalc-v0.1.3.apk)
 
 </div> 
 
@@ -17,6 +17,7 @@
   - **Дополнительные часы:** Возможность добавлять или вычитать дополнительные дневные или ночные часы для точного учета (например, если вы опоздали или работали сверхурочно).
   - **Точный расчет:** Все входные данные конвертируются в часы, и только после этого рассчитывается сумма вашего заработка, что обеспечивает точность.
   - **Премии:** Легко учитывайте премии за скорость и качество одним нажатием кнопки.
+  - **Темы:** Возможность сменить тему приложения, нажатием на поле "Зарплата:".
 
 ## Цели проекта:
 
