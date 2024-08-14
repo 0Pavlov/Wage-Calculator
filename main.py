@@ -10,7 +10,9 @@ Builder.load_file('test_ui.kv')
 
 
 class WageCalculatorLayout(BoxLayout):
-    theme = ThemeManager.get_theme('default')
+    available_themes_names: list = ThemeManager.get_themes_names()
+    current_theme_name = ThemeManager.get_saved_theme()
+    theme = ThemeManager.get_theme(current_theme_name)
     background_color = ListProperty(theme['background_color'])
     button_color = ListProperty(theme['button_color'])
     button_color_dark = ListProperty(theme['button_color_dark'])
@@ -21,8 +23,21 @@ class WageCalculatorLayout(BoxLayout):
     # Does nothing. Brakes on delete.
     slider_track_color = ListProperty(theme['slider_track_color'])
 
-    def update_theme(self, theme_name):
-        self.theme = ThemeManager.get_theme(theme_name)
+    def update_theme(self, theme_name: str) -> None:
+        """Updates the application's theme to the specified theme.
+
+        Retrieves the theme configuration from the `ThemeManager` based on
+        the provided `theme_name` and applies the corresponding colors to
+        the application's UI elements.
+
+        Args:
+            theme_name (str): The name of the theme to apply.
+
+        Returns:
+            None
+        """
+        self.current_theme_name = theme_name
+        self.theme = ThemeManager.get_theme(self.current_theme_name)
         self.background_color = self.theme['background_color']
         self.button_color = self.theme['button_color']
         self.button_color_dark = self.theme['button_color_dark']
@@ -42,15 +57,17 @@ class WageCalculatorApp(App):
         self.day_hours = 0
         self.night_hours = 0
 
-    def set_theme(self):
-        current_theme_name = list(ThemeManager.themes.keys())[
-            list(ThemeManager.themes.values()).index(self.root.theme)]
-        themes = ThemeManager.get_themes_names()
-        next_theme_index = (themes.index(current_theme_name) + 1) % len(themes)
-        next_theme = themes[next_theme_index]
-        self.root.update_theme(next_theme)
+    def switch_theme(self) -> None:
+        """Switches the app's theme to the next one in the cycle.
 
-    def calculate(self):
+        The current theme is determined by `self.root.current_theme_name`.
+
+        Returns:
+            None
+        """
+        self.root.update_theme(ThemeManager.next_theme(self.root.current_theme_name))
+
+    def calculate(self) -> None:
         total_earned = calculate(
             night_shifts=self.night_shifts,
             day_shifts=self.day_shifts,
