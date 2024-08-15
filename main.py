@@ -4,7 +4,7 @@ from kivy.lang import Builder
 from kivy.properties import ListProperty
 from kivy.uix.boxlayout import BoxLayout
 from wage_calculator.functions import calculate
-from wage_calculator.theme_manager import ThemeManager
+from wage_calculator.theme_manager.theme_manager import ThemeManager
 
 Builder.load_file('test_ui.kv')
 
