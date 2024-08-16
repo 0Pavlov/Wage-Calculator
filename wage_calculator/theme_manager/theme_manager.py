@@ -22,7 +22,8 @@ class ThemeManager:
         get_saved_theme(): Retrieves the saved theme.
 
     """
-    if not os.path.exists('wage_calculator/theme_manager/themes.json'):
+    themes_file_path: str = 'wage_calculator/theme_manager/themes.json'
+    if not os.path.exists(themes_file_path):
         themes = {
             "default": {
                 "background_color": [0.17254901960784313, 0.17254901960784313,
@@ -155,11 +156,11 @@ class ThemeManager:
                 "slider_track_color": [0, 0, 0, 0]
             }
         }
-        with open('wage_calculator/theme_manager/themes.json', 'w') as file:
+        with open(themes_file_path, 'w') as file:
             json.dump(themes, file, indent=4)
             file.close()
 
-    with open('wage_calculator/theme_manager/themes.json', 'r') as file:
+    with open(themes_file_path, 'r') as file:
         themes: dict = json.load(file)
         file.close()
 
@@ -205,8 +206,9 @@ class ThemeManager:
         Returns:
             str: The theme name.
         """
+        current_theme_path: str = 'wage_calculator/theme_manager/current_theme.json'
         try:
-            with open('wage_calculator/theme_manager/current_theme.json', 'r') as file:
+            with open(current_theme_path, 'r') as file:
                 current_theme_name = json.load(file)['current_theme']
                 file.close()
         except FileNotFoundError:
@@ -222,7 +224,8 @@ class ThemeManager:
         The file is saved in JSON format.
         """
         theme_to_save: str = theme
-        with open('wage_calculator/theme_manager/current_theme.json', 'w') as file:
+        current_theme_path: str = 'wage_calculator/theme_manager/current_theme.json'
+        with open(current_theme_path, 'w') as file:
             json.dump({"current_theme": theme_to_save}, file, indent=4)
             file.close()
 
