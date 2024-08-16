@@ -5,7 +5,7 @@
 ***This is a simple Wage Calculator made using the Kivy framework, allowing you to keep track of your earnings.***
 I work at a company where earnings calculations can be complex. Even a simple change in hours worked may require a tedious, though not necessarily difficult, calculation process. To address this problem and make life easier, I decided to create this software.
 
-[![Static Badge](https://img.shields.io/badge/DOWNLOAD-APK%20v0.1.3-white?style=for-the-badge&logo=android&logoColor=white&logoSize=auto&labelColor=black&link=**https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.3/WCalc-v0.1.3.apk**)](https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.3/WCalc-v0.1.3.apk)
+[![Static Badge](https://img.shields.io/badge/DOWNLOAD-APK%20v0.1.4-white?style=for-the-badge&logo=android&logoColor=white&logoSize=auto&labelColor=black&link=**https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.4/WCalc-v0.1.4.apk**)](https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.4/WCalc-v0.1.4.apk)
 
 [читать на русском](https://github.com/0Pavlov/Wage-Calculator/blob/master/README.ru.md)
 
@@ -19,7 +19,7 @@ I work at a company where earnings calculations can be complex. Even a simple ch
   - **Additional Hours:** Ability to add or subtract additional day or night hours for precise tracking (e.g., if you were late or worked overtime).
   - **Precise Calculation:** All inputs are converted to hours and only then amount you've earned is calculated, ensuring accuracy.
   - **Bonuses:** Easily factor in speed and quality bonuses with a single button toggle.
-  - **Themes:** Ability to change themes by pressing on the salary label.
+  - **Themes:** Ability to change themes by pressing on the salary label (selected theme automatically saves and loads on the next app launch).
 
 ## Project Goals:
 
