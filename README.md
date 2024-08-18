@@ -8,6 +8,7 @@
 I work at a company where earnings calculations can be complex. Even a simple change in hours worked may require a tedious, though not necessarily difficult, calculation process. To address this problem and make life easier, I decided to create this software.
 
 [![Static Badge](https://img.shields.io/badge/DOWNLOAD-APK%20v0.1.4-white?style=for-the-badge&logo=android&logoColor=white&logoSize=auto&labelColor=black&link=**https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.4/WCalc-v0.1.4.apk**)](https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.4/WCalc-v0.1.4.apk)
+[![Static Badge](https://img.shields.io/badge/DOWNLOAD_RU-APK%20v0.1.4-white?style=for-the-badge&logo=android&logoColor=white&logoSize=auto&labelColor=black&link=**https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.4/WCalc-v0.1.4-ru.apk**)](https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.4/WCalc-v0.1.4-ru.apk)
 
 [читать на русском](https://github.com/0Pavlov/Wage-Calculator/blob/master/README.ru.md)
 
