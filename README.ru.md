@@ -6,6 +6,7 @@
 Я работаю в компании, где расчет заработной платы может быть сложным. Даже простое изменение количества отработанных часов может потребовать утомительного, хотя и не обязательно сложного, процесса расчета. Чтобы решить эту проблему и упростить жизнь, я решил создать это приложение.
 
 [![Static Badge](https://img.shields.io/badge/DOWNLOAD-APK%20v0.1.4-white?style=for-the-badge&logo=android&logoColor=white&logoSize=auto&labelColor=black&link=**https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.4/WCalc-v0.1.4.apk**)](https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.4/WCalc-v0.1.4.apk)
+[![Static Badge](https://img.shields.io/badge/DOWNLOAD_RU-APK%20v0.1.4-white?style=for-the-badge&logo=android&logoColor=white&logoSize=auto&labelColor=black&link=**https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.4/WCalc-v0.1.4-ru.apk**)](https://github.com/0Pavlov/Wage-Calculator/releases/download/v0.1.4/WCalc-v0.1.4-ru.apk)
 
 </div> 
 
@@ -36,6 +37,15 @@
 
   - Практическое применение Python и Kivy для разработки мобильных приложений.
   - Принципы UI/UX дизайна для интуитивно понятного пользовательского опыта.
+
+## Некоторые из доступных тем:
+<div align="center"><table><tr><td>Dracula</td><td>Red</td></tr><tr><td>
+<img src="https://github.com/0Pavlov/Wage-Calculator/blob/master/sources/assets/theme_dracula.png"/></td><td>
+<img src="https://github.com/0Pavlov/Wage-Calculator/blob/master/sources/assets/theme_red.png"/></td></tr>
+<tr><td>Green</td><td>Blue</td></tr><tr><td>
+<img src="https://github.com/0Pavlov/Wage-Calculator/blob/master/sources/assets/theme_green.png"/></td><td>
+<img src="https://github.com/0Pavlov/Wage-Calculator/blob/master/sources/assets/theme_blue.png"/></td></tr>
+</table></div>
 
 ## Как использовать:
 
