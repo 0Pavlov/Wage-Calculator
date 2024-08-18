@@ -41,6 +41,15 @@ I work at a company where earnings calculations can be complex. Even a simple ch
   - Practical application of Python and Kivy for mobile app development.
   - Principles of UI/UX design for intuitive user experiences.
 
+## Some Themes Preview:
+<div align="center"><table><tr><td>Dracula</td><td>Red</td></tr><tr><td>
+<img src="https://github.com/0Pavlov/Wage-Calculator/blob/master/sources/assets/theme_dracula.png"/></td><td>
+<img src="https://github.com/0Pavlov/Wage-Calculator/blob/master/sources/assets/theme_red.png"/></td></tr>
+<tr><td>Green</td><td>Blue</td></tr><tr><td>
+<img src="https://github.com/0Pavlov/Wage-Calculator/blob/master/sources/assets/theme_green.png"/></td><td>
+<img src="https://github.com/0Pavlov/Wage-Calculator/blob/master/sources/assets/theme_blue.png"/></td></tr>
+</table></div>
+
 ## How to use:
 
   - Press the download button in the description section (.apk file will be downloaded).
