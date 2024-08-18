@@ -1,5 +1,7 @@
 <div align="center">
 
+![banner](https://github.com/0Pavlov/Wage-Calculator/blob/master/sources/assets/banner.png)
+
 # Описание:
 
 ***Это простой калькулятор заработной платы, созданный с использованием фреймворка Kivy, который позволяет вам отслеживать свои доходы.***
