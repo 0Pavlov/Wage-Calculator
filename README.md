@@ -1,5 +1,7 @@
 <div align="center">
 
+![banner](https://github.com/0Pavlov/Wage-Calculator/blob/master/sources/assets/banner.png)
+
 # Description:
 
 ***This is a simple Wage Calculator made using the Kivy framework, allowing you to keep track of your earnings.***
